@@ -2,8 +2,11 @@ name: Daily Repository Update
 
 on:
   schedule:
-    - cron: '15 4 * * *'   # Runs daily at 04:15 UTC (specific time, no wildcards)
+    - cron: '15 4 * * *'   # Runs daily at 04:15 UTC
   workflow_dispatch:
+
+permissions:
+  contents: write   # 👈 THIS FIXES THE 403 ERROR
 
 jobs:
   daily-commit:
